@@ -4,6 +4,6 @@
 #set -x
 
 hostinfo=`uname -a`
-echo "Installing jenkins on host..."
+echo "Gathering system info..."
 echo ${hostinfo}
 

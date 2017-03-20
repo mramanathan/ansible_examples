@@ -9,7 +9,7 @@
     # take care to install basic pkgs
     - bootstrap
 
-#      one of the ways to run external script
+# one of the ways to run external script
   tasks: 
-    - script: /home/ubuntu/ansible-jenkins/test.sh --creates /tmp/test.txt
+    - script: hostinfo.sh --creates /tmp/test.txt
 
