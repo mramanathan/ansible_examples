@@ -15,7 +15,7 @@
   - debug: var=result.stdout_lines
 
   - name: invoke external script
-    command: hostinfo.sh
+    command: ./hostinfo.sh --creates /tmp/host.txt
     register: tstout
 
   - debug: var=tstout.stdout
