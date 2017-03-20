@@ -1,0 +1,15 @@
+---
+- name: Setup and Configure Jenkins master
+  hosts: all
+  tasks:
+  # sudo: True ~~> use the become/become_mthod in lieu of sudo
+  become: true
+  become_method: sudo
+  roles:
+    # take care to install basic pkgs
+    - bootstrap
+
+#      one of the ways to run external script
+  tasks: 
+    - script: /home/ubuntu/ansible-jenkins/test.sh --creates /tmp/test.txt
+

@@ -1,0 +1,22 @@
+---
+- hosts: all
+  gather_facts: no
+
+  tasks:
+  - name: methods to run external script and spewing stdout
+    command: echo "hello jenkins!"
+    register: hello
+
+  - debug: var=hello.stdout_lines
+
+  - shell: /usr/bin/uptime
+    register: result
+
+  - debug: var=result.stdout_lines
+
+  - name: invoke external script
+    command: /home/ubuntu/ansible-jenkins/test.sh --creates /tmp/test.txt
+    register: tstout
+
+  - debug: var=tstout.stdout
+
